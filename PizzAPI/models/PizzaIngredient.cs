@@ -6,6 +6,8 @@ namespace PizzAPI.models
     [Table("IngredientPizza")]
     public class PizzaIngredient
     {
+        public int Id { get; set; } 
+            
         [Column("pizza_id")]
         public int PizzaId { get; set; }
               public Pizza Pizza { get; set; }

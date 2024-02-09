@@ -99,9 +99,9 @@ namespace PizzAPI.Data
               });
 
             modelBuilder.Entity<PizzaIngredient>().HasData(
-               new PizzaIngredient (){ PizzaId = 1, IngredientId = 1 },
-               new PizzaIngredient() { PizzaId = 2, IngredientId = 2 },
-               new PizzaIngredient() { PizzaId = 3, IngredientId = 3 }
+               new PizzaIngredient(){Id= 1, PizzaId = 1, IngredientId = 1 },
+               new PizzaIngredient(){Id= 2, PizzaId = 2, IngredientId = 2 },
+               new PizzaIngredient(){Id = 3, PizzaId = 3, IngredientId = 3 }
             );
         }
     }
