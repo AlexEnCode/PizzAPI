@@ -4,34 +4,38 @@ using Microsoft.EntityFrameworkCore;
 
 namespace PizzAPI.models
 {
-    [Table("pizza")]
-    public class Pizza
-    {
-      
-        [Column("id")]
-        public int Id { get; set; }
+   
+        [Table("pizza")]
+        public class Pizza
+        {
+            [Key]
+            [Column("id")]
+            public int Id { get; set; }
 
-        [Column("name")]
-        public string Name { get; set; }
+            [Column("nom")]
+            [Required]
+            public string Nom { get; set; }
 
-        [Column("description")]
-        public string Description { get; set; }
+            [Column("description")]
+            [Required]
+            public string Description { get; set; }
 
+            [Column("prix")]
+            [Required]
+            public double Prix { get; set; }
 
-        [Column("price")]
-        [Precision(37,2)]
-        public decimal Price { get; set; }
+            [Column("image")]
+            [Required]
+            public string Image { get; set; }
 
-        [Column("image")]
-        public string Image { get; set; }
+            [Column("pizza_vegetarienne")]
+            [Required]
+            public bool isVegetarienne { get; set; } = false;
 
-        [Column("isVegetarian")]
-        public bool IsVegetarian { get; set; }
+            [Column("pizza_piquante")]
+            [Required]
+            public bool isPiquante { get; set; } = false;
 
-        [Column("isSpicy")]
-        public bool IsSpicy { get; set; }
-
-        [Column("ingrediant")]
-        public List<Ingredient> Ingredients { get; set; }
-    }
+            public List<PizzaIngredient> PizzaIngredients { get; set; } = new List<PizzaIngredient>();
+        }
 }
