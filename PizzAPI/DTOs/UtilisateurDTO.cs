@@ -1,14 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
-using PizzAPI.Validator;
 
-namespace PizzAPI.models
+namespace PizzAPI.DTOs
 {
-    [Table("utilisateur")]
-    public class Utilisateur
+    public class UtilisateurDTO
     {
-        [Key]
-        [Column("(id)")]
         public int Id { get; set; }
 
         [Column("prenom")]
